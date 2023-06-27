@@ -1,1 +1,1 @@
-# /c/Users/dhrub/Downloads/svdiff-pytorch
+# /dhrub/Downloads/svdiff-pytorch
