@@ -1,6 +1,6 @@
 # This repository contains the files related to the svdiff-pytorch project. It includes the following files:
 
-.vscode/: Configuration files for Visual Studio Code.
+1. .vscode/: Configuration files for Visual Studio Code.
 
 autoset.sh: Shell script for automating setup.
 
