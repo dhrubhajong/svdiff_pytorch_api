@@ -2,14 +2,14 @@
 
 * .vscode/: Configuration files for Visual Studio Code.
 
-* autoset.sh: Shell script for automating setup.
+* autoset.sh: Shell script for automating setup and environment.
 
-conda.yaml: Environment configuration file for Conda.
+* conda.yaml: Environment configuration file for Conda.
 
-dockerfile: Dockerfile for building a Docker image.
+* dockerfile: Dockerfile for building a Docker image.
 
-fast_api.py: FastAPI application file.
+* fast_api.py: FastAPI application file.
 
-main.py: Main Python file for the project.
+* main.py: Main Python file for the project.
 
-svd_py/: Directory containing additional Python modules and scripts.
+* svd_py/: Directory containing additional Python modules and scripts.
