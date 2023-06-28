@@ -10,6 +10,6 @@
 
 * fast_api.py: FastAPI application file.
   
-* main.py responsible for starting the fastAPI application using Uvicorn as the server 
+* main.py contains entry point for the ASGI application. 
   
 * svd_py/: Directory containing additional Python modules and scripts.
