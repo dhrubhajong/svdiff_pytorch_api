@@ -10,6 +10,6 @@
 
 * fast_api.py: FastAPI application file.
   
-* main.py contains  
+* main.py responsible for starting the fastAPI application using Uvicorn as the server 
   
 * svd_py/: Directory containing additional Python modules and scripts.
