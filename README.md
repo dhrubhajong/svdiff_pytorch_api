@@ -10,6 +10,4 @@
 
 * fast_api.py: FastAPI application file.
 
-* main.py: Main Python file for the project.
-
 * svd_py/: Directory containing additional Python modules and scripts.
