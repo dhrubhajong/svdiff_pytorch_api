@@ -1,29 +1,26 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
 import requests
 
 app = FastAPI()
 
-Open_ai_api_key = "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"
+class PromptRequest(BaseModel):
+    prompt: str
 
-@app.get("/process/{prompt}")
-def process_prompt(prompt: str):
-    # Set the necessary headers and parameters for the API request
-    headers = {
-        "Authorization": f"Bearer {Open_ai_api_key}",
-        "Content-Type": "application/json"
-    }
-    params = {
-        "prompt": prompt
-    }
+@app.post("/process-prompt")
+def process_prompt(prompt_request: PromptRequest):
+    # Get the prompt from the request
+    prompt = prompt_request.prompt
 
-    # Make the API request to the OpenAI GPT-3 API
-    response = requests.get("https://api-inference.openai.com/v1/completions", headers=headers, params=params)
+    # Send the prompt to the Bark repository for processing
+    response = requests.post("https://api.github.com/repos/mkshing/svdiff-pytorch/endpoint", json={"prompt": prompt})
+    
+    # Check the response status code
+    if response.status_code != 200:
+        raise HTTPException(status_code=response.status_code, detail="Error processing prompt")
 
-    # Extract the relevant information from the api response
-    result =response.json
+    # Extract the result from the response
+    result = response.json().get("result")
 
-# Customize the message to be returned in the API response
-    message = f"Processed prompt: {prompt}. Result: {result}"
-
-    # Return the result as the API response
-    return {"message": message}
+    # Return the result as the response
+    return {"result": result}
